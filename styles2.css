@@ -1,0 +1,87 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color:darkseagreen; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0;
+}
+
+.page {
+    text-align: center;
+    width: 100%; 
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 2.5rem; 
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.box {
+    background-color: darkgoldenrod; 
+    width: 90%; 
+    height: 60%;
+    max-width: 1200px; 
+    padding: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1%; 
+}
+
+.button {
+    background-color: bisque; 
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    flex: 1; 
+    max-width: 7%; 
+    aspect-ratio: 1 / 2; 
+    font-size: 1.5rem; 
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dices {
+    display: flex;
+    justify-content: center;
+    gap: 3rem; 
+    margin-top: 2rem;
+}
+
+.dice {
+    width: 10vw; 
+    max-width: 100px; 
+    height: auto; 
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 0.5rem;
+    object-fit: contain; 
+}
+
+
+.pressed{
+    background-color: darkgrey;
+}
+
+
