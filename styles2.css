@@ -47,6 +47,11 @@ body {
     gap: 1%; 
 }
 
+.btn{
+    display: flex;
+    width: 2vw;
+}
+
 .button {
     background-color: bisque; 
     border: 1px solid black;

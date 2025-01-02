@@ -12,13 +12,14 @@ function restart() {
     selectedSum = 0;
     arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]; 
     document.querySelectorAll(".button").forEach(button => {
-        button.classList.remove("pressed"); 
-    document.querySelectorAll(".dice").forEach(dice => dice.src = "images/dice-6.svg");
-    document.querySelector(".title").textContent = "Press Space to roll the dice";    
+        button.classList.remove("pressed");  
     });
+    document.querySelectorAll(".dice").forEach(dice => dice.src = "images/dice-6.svg");
+    document.querySelector(".title").textContent = "Press Start to roll the dice";
+    document.querySelector(".start").src="images/start.svg";
     started = false;
-    document.addEventListener("keypress", function (event) {
-        if (event.code === 'Space' && !started) {
+    document.querySelector(".start").addEventListener("click", function () {
+        if (!started) {
             started = true; 
             diceRoll(); 
         }
@@ -108,18 +109,19 @@ function checkGameOver() {
     }
 
     if (!hasValidCombination(remainingNumbers, sum)) {
-        document.querySelector(".title").textContent="Roll:"+sum+". Game Over. Press Space again to restart"; 
-        document.addEventListener("keypress",function(event){
-            if(event.code==='Space') restart()}); 
+        document.querySelector(".title").textContent="You lost. Press Restart"; 
+        document.querySelector(".start").src="images/restart.svg";
+        document.querySelector(".start").addEventListener("click",function(){
+            restart()}); 
     }
 }
 
-document.addEventListener("keypress", function (event) {
-    if (event.code === 'Space' && !started) {
+document.querySelector(".start").addEventListener("click", function () {
+    if (!started) {
         started = true; 
         diceRoll(); 
     }
-}); 
+});
 
 
 
