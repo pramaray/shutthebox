@@ -17,11 +17,14 @@ function restart() {
     document.querySelectorAll(".dice").forEach(dice => dice.src = "images/dice-6.svg");
     document.querySelector(".title").textContent = "Press Start to roll the dice";
     document.querySelector(".start").src="images/start.svg";
+    document.querySelector(".start").disabled = false;
     started = false;
     document.querySelector(".start").addEventListener("click", function () {
         if (!started) {
             started = true; 
+            document.querySelector(".start").disabled = true;
             diceRoll(); 
+            
         }
     }); 
 }
@@ -103,14 +106,18 @@ function hasValidCombination(arr, sum) {
 function checkGameOver() {
     const remainingNumbers = arr.filter(num => num !== 0); 
     if (remainingNumbers.length === 0) {
-         document.querySelector(".title").textContent="Congratulations! You won!"; 
-        restart(); 
+        document.querySelector(".title").textContent="Congratulations! You won!";
+        document.querySelector(".start").src="images/restart.svg";
+        document.querySelector(".start").disabled=false; 
+        document.querySelector(".start").addEventListener("click",function(){
+            restart()});  
         return;
     }
 
     if (!hasValidCombination(remainingNumbers, sum)) {
         document.querySelector(".title").textContent="You lost. Press Restart"; 
         document.querySelector(".start").src="images/restart.svg";
+        document.querySelector(".start").disabled=false;
         document.querySelector(".start").addEventListener("click",function(){
             restart()}); 
     }
@@ -120,6 +127,7 @@ document.querySelector(".start").addEventListener("click", function () {
     if (!started) {
         started = true; 
         diceRoll(); 
+        document.querySelector(".start").disabled=true;
     }
 });
 
