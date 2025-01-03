@@ -48,8 +48,10 @@ body {
 }
 
 .btn{
+    padding-top: 2vh;
     display: flex;
-    width: 2vw;
+    cursor: pointer;
+    width: 3vw;
 }
 
 .button {

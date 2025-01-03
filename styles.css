@@ -19,6 +19,7 @@ body{
     width: 20vh;
     border-radius: 0.5rem;
     font-size: 1rem;
+    cursor: pointer;
 }
 
 .page{
