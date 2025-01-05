@@ -15,7 +15,7 @@ function restart() {
         button.classList.remove("pressed");  
     });
     document.querySelectorAll(".dice").forEach(dice => dice.src = "images/dice-6.svg");
-    document.querySelector(".title").textContent = "Press Start to roll the dice";
+    document.querySelector(".title").textContent = "Press Play to roll the dice";
     document.querySelector(".start").src="images/start.svg";
     document.querySelector(".start").disabled = false;
     started = false;
